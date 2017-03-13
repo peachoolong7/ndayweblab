@@ -1,0 +1,93 @@
+<html>
+<head>
+<style>
+body{
+  margin:0;
+  padding :0;
+}
+.slide1{
+  background-color : #240ed1;
+}
+
+.slide2{
+  background-color : #d10e86;
+}
+
+.slide{
+  width : 100%;
+  height:100%;
+  overflow : hidden;
+  position : relative;
+
+}
+
+.circle1{
+  width : 3px;
+  height :3px;
+  background-color : #d10e86;
+  position : absolute;
+  left : 100px;
+  top : 50px;
+  transition : 0.8s all ease-in-out;
+  transform-origin: 50% 50%;
+    transform: rotate(45deg);
+}
+
+.circle2{
+  width : 3px;
+  height :3px;
+  background-color : #81d30e;
+  position : absolute;
+  right : 100px;
+  bottom : 50px;
+  transition : 0.8s all ease-in-out;
+  transform-origin: 50% 50%;
+    transform: rotate(45deg);
+}
+.animateCircle1{
+  transform: scale(1000, 1000);
+
+}
+
+</style>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+<script>
+	// init controller
+	var controller = new ScrollMagic.Controller();
+</script>
+</head>
+<body>
+
+  <div class="slide2 slide"></div>
+
+  <div class="slide1 slide" id = "trigger1">
+    <div class="circle1" id="circle1">
+
+    </div>
+
+  </div>
+  <div class="slide2 slide" id = "trigger2">
+    <div class="circle2" id="circle2">
+
+    </div>
+
+
+  </div>
+<script>
+
+var scene = new ScrollMagic.Scene({triggerElement: "#trigger1"})
+        .setClassToggle("#circle1", "animateCircle1")
+        .addIndicators({name: "1 - add a class"})
+        .addTo(controller);
+
+var scene = new ScrollMagic.Scene({triggerElement: "#trigger2"})
+        .setClassToggle("#circle2", "animateCircle1")
+        .addIndicators({name: "2 - add a class"})
+        .addTo(controller);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "ndayweblab",
+  "version": "1.0.0",
+  "description": "This folder contain many modules that can be use for experiments",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-lab2-css": "node-sass --include-path scss lab2_scrol_color/scss/main.scss   lab2_scrol_color/css/main.css",
+
+    "watch-lab2-css": "nodemon -e scss -x \"npm run build-lab2-css\" "
+  },
+  "author": "",
+  "license": "ISC"
+}
